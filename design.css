@@ -1,0 +1,33 @@
+/*Button Style*/
+#sendButton {
+	background-color:#ff7b00;
+	text-indent:0;
+	border:0px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:26px;
+	width:125px;
+	text-decoration:none;
+	text-align:center;
+}
+#sendButton:hover {
+	background-color:#ffc477;
+}
+#sendButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*Link Style*/
+a:hover {
+	color: #FFC477;
+	text-decoration: underline;
+	cursor: pointer;
+}
+a:active {
+	color: #FF7B00;
+}
