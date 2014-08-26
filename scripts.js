@@ -31,7 +31,7 @@ $(document).ready(function(){
                 $("#answer").html(""); // Etwaige vorherige Ausgaben löschen
                 $(".simTerms").html(""); // Etwaige vorherige Ausgaben löschen
                 
-                var synsets = data.synsets; // JASON-Objekt
+                var synsets = data.synsets; // JSON-Objekt
                 for(var i = 0; i < synsets.length; i++) // Über alle Synset Arrays drüber laufen
                 {
                     if(i > 0)
@@ -121,12 +121,9 @@ $(document).ready(function(){
                     $(".simTerms").append("<i>Keine ähnlichen Begriffe gefunden</i>");
                 }
                 
-                // DEBUGGING (für Anzeige löschen der Auskommentierung der folgenden zwei Zeilen)
-                // $("#debugging").html('<br /><br /><br />### DEBUGGING ###<br />');
-                // $("#debugging").append("<i>Das geladene JSON-Objekt</i><br />" + JSON.stringify(data)); // Urpsrungsdaten JSON
-            }); // $.getJSON()
-        } // function executeRequest()
-    }); // $("#sendButton").click()
+            });
+        }
+    }); 
     
     // Für Return im Eingabefeld
     $("#input1").keydown(function(event){
