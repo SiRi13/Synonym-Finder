@@ -3,18 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="design.css" type="text/css" rel="stylesheet">
         <script src="jquery-2.1.1.min.js"></script>
         <script src="scripts.js" type="text/javascript"></script>
         <title>Synonym Finder</title>
     </head>
     <body>
-        Eingabe: <input id="input1" type="text" name="inputForRequest" size="10" />
-        <button id="sendButton">Synonym finden!</button>
-        <input id="levelCheckBox" type="checkbox"/> Level
+        <input id="input1" type="text" name="inputForRequest" size="33" />
+        <br><button id="sendButton">Synonym finden!</button>
+        <input id="levelCheckBox" type="checkbox"/>
+        <label for="levelCheckBox">Level</label>
         <div id="requestedString"></div>
         <div id="answer"></div>
+        <div id="simTermsHead"></div>
         <div class="simTerms"></div>
         <div id="debugging"></div>
-        test change...
     </body>
 </html>

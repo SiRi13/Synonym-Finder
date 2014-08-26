@@ -12,7 +12,12 @@ $(document).ready(function(){
 
         // Eingabe mit immer gleicher Syntax: Erster Buchstabe groß, Rest klein
         var inputForRequest = $("input[name=inputForRequest]").val().charAt(0).toUpperCase() + $("input[name=inputForRequest]").val().substring(1,$("input[name=inputForRequest]").val().length).toLowerCase();
-        executeRequest(inputForRequest);
+        
+        // Bei leerem Textfeld keine Anfrage senden
+        if(inputForRequest != "")
+        {
+            executeRequest(inputForRequest);
+        }
         
         function executeRequest(request)
         {
@@ -45,7 +50,7 @@ $(document).ready(function(){
 
                         if (i == 0 && j == 0)
                         {
-                            $("#requestedString").append("Synonyme für '<i><b>" + request + "'</i></b><br>");
+                            $("#requestedString").append("Synonyme für '<i><b>" + $("input[name=inputForRequest]").val() + "'</i></b>:<br>");
                         }
 
                        // Pruefen ob Eingabe in den gelieferten terms (in allen möglichen Schreibweisen). Falls ja, nicht anzeigen!
@@ -75,7 +80,7 @@ $(document).ready(function(){
                 // Similiar Terms = Aehnliche Begriffe zur Eingabe
                 var similarTerms = data.similarterms;  // JASON-Objekt
                                 
-                $(".simTerms").html("<br>Ähnliche Begriffe:<br>");
+                $("#simTermsHead").html("<br>Ähnliche Begriffe:<br>");
                
                // Falls Similar Terms vorhanden
                 if(similarTerms != undefined)
@@ -113,7 +118,7 @@ $(document).ready(function(){
                 }
                 else
                 {
-                    $(".simTerms").append("<i>Keine ähnlichen Begriffe gefunden.</i>");
+                    $(".simTerms").append("<i>Keine ähnlichen Begriffe gefunden</i>");
                 }
                 
                 // DEBUGGING (für Anzeige löschen der Auskommentierung der folgenden zwei Zeilen)
